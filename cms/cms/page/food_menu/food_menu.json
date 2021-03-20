@@ -1,0 +1,25 @@
+{
+ "content": null,
+ "creation": "2021-03-17 18:38:57.390901",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "",
+ "idx": 0,
+ "modified": "2021-03-19 09:43:40.668495",
+ "modified_by": "Administrator",
+ "module": "CMS",
+ "name": "food-menu",
+ "owner": "Administrator",
+ "page_name": "Food Menu",
+ "restrict_to_domain": "Services",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Canteen Menu"
+}

@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:item",
+ "creation": "2021-03-16 11:10:01.517266",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "original_rate",
+  "subsidy_rate",
+  "limit",
+  "item_image"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "item",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "original_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Original Rate",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "subsidy_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Subsidy Rate",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "limit",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Per Day Limit",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_image",
+   "fieldtype": "Attach Image",
+   "label": "Item Image"
+  }
+ ],
+ "image_field": "item_image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-03-17 15:37:40.881184",
+ "modified_by": "Administrator",
+ "module": "CMS",
+ "name": "Food Item",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

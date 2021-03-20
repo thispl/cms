@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "creation": "2021-03-16 16:23:26.798390",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "food_item",
+  "qty",
+  "price"
+ ],
+ "fields": [
+  {
+   "fieldname": "food_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Food Item",
+   "options": "Food Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "qty",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Qty",
+   "options": "1\n2\n3\n4\n5"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-03-19 20:06:31.744586",
+ "modified_by": "Administrator",
+ "module": "CMS",
+ "name": "Food Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
