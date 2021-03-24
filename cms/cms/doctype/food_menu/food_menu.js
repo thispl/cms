@@ -103,6 +103,7 @@ frappe.ui.form.on('Food Menu', {
 		frm.events.add_item(frm, item_name)
 	},
 	add_item(frm, item_name) {
+		if(frm.doc.employee){
 		frappe.call({
 			method: "cms.cms.doctype.food_menu.food_menu.calculate_amount",
 			args: {
@@ -113,13 +114,15 @@ frappe.ui.form.on('Food Menu', {
 			callback(r) {
 				// console.log(r.message)
 				frm.add_child("food_child", {
-					food_item: r.message[0],
+					food_item: r.message[0][0],
 					qty:1,
-					price: r.message[1]
+					price: r.message[0][1],
+					subsidy:r.message[1]
 				})
 				frm.refresh_field("food_child")
 			}
 		})
+	}
 	},
 	// add_item:function(frm,item_name){
 	// 	frm.add_child("food_child", {
@@ -214,7 +217,7 @@ frappe.ui.form.on('Food Menu', {
 	// 			)
 	// 	},
 	card_no(frm) {
-		frappe.db.get_value("Employee", { "proximity_card_no": frm.doc.card_no }, ["employee_name", "name", "department", "designation"],
+		frappe.db.get_value("Employee", { "rfid": frm.doc.card_no }, ["employee_name", "name", "department", "designation"],
 			(r) => {
 				frm.set_value("employee", r.name)
 				frm.fields_dict.employee_details.$wrapper.empty().append(` <table class='table table-bordered'>

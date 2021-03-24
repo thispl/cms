@@ -1,14 +1,13 @@
 {
  "actions": [],
- "creation": "2021-03-16 16:23:26.798390",
+ "creation": "2021-03-22 15:23:18.985730",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "food_item",
   "qty",
-  "price",
-  "subsidy"
+  "amount"
  ],
  "fields": [
   {
@@ -20,34 +19,27 @@
    "read_only": 1
   },
   {
-   "fieldname": "price",
+   "fieldname": "amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Price",
+   "label": "Amount",
    "read_only": 1
   },
   {
-   "default": "1",
    "fieldname": "qty",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Qty",
-   "options": "1\n2\n3\n4\n5"
-  },
-  {
-   "default": "0",
-   "fieldname": "subsidy",
-   "fieldtype": "Check",
-   "label": "subsidy"
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2021-03-22 16:54:50.756389",
+ "modified": "2021-03-22 16:39:11.379877",
  "modified_by": "Administrator",
  "module": "CMS",
- "name": "Food Child",
+ "name": "Consumption",
  "owner": "Administrator",
  "permissions": [],
  "quick_entry": 1,
