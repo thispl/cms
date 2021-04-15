@@ -25,7 +25,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Employee",
-   "options": "Employee"
+   "options": "Employee",
+   "read_only": 1
   },
   {
    "fetch_from": "employee.employee_name",
@@ -43,12 +44,14 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Date"
+   "label": "Date",
+   "read_only": 1
   },
   {
    "fieldname": "time",
    "fieldtype": "Time",
-   "label": "Time"
+   "label": "Time",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_5",
@@ -62,6 +65,7 @@
    "in_list_view": 1,
    "label": "Item Name",
    "options": "Food Item",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -72,7 +76,8 @@
    "fieldname": "price",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Price"
+   "label": "Price",
+   "read_only": 1
   },
   {
    "fieldname": "food_order_no",
@@ -85,12 +90,13 @@
    "default": "0",
    "fieldname": "subsidy",
    "fieldtype": "Check",
-   "label": "Subsidy"
+   "label": "Subsidy",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-22 16:44:15.527069",
+ "modified": "2021-03-26 15:38:57.217027",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Daily Food Entry",

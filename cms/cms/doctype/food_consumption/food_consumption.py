@@ -37,14 +37,18 @@ def get_food_consumption(employee,month):
 	else:
 		mon = 12
 	
-	consumption = frappe.db.sql("""select item,count(*) as qty,sum(price) as amount from `tabDaily Food Entry` where month(date) = %s group by item""",mon,as_dict=True)
+	consumption = frappe.db.sql("""select item,count(*) as qty,sum(price) as amount from `tabDaily Food Entry` where employee = %s and month(date) = %s group by item""",(employee,mon),as_dict=True)
 	subsidy = frappe.db.get_value("Employee",employee,["subsidy_amount"])
-	subsidy_utilized = frappe.db.sql("select sum(price) as amount from `tabDaily Food Entry` where month(date) = %s and subsidy = 1 ",mon,as_dict=True)
-	bill_without_subsidy = frappe.db.sql("select sum(price) as amount from `tabDaily Food Entry` where month(date) = %s and subsidy = 0 ",mon,as_dict=True)
+	subsidy_utilized = frappe.db.sql("select sum(price) as amount from `tabDaily Food Entry` where employee = %s and month(date) = %s and subsidy = 1 ",(employee,mon),as_dict=True)
+	bill_without_subsidy = frappe.db.sql("select sum(price) as amount from `tabDaily Food Entry` where employee = %s and  month(date) = %s and subsidy = 0 ",(employee,mon),as_dict=True)
 	subsidy_balance = 0
 	total_bill = 0
-	if subsidy_balance or subsidy_utilized[0].amount:
-		subsidy_balance = subsidy - subsidy_utilized[0].amount
-	if subsidy_utilized[0].amount or bill_without_subsidy[0].amount:
-		total_bill = subsidy_utilized[0].amount + bill_without_subsidy[0].amount
-	return consumption,subsidy_balance,total_bill
+	if subsidy > 0:
+		if subsidy_balance or subsidy_utilized[0].amount:
+			subsidy_balance = subsidy - subsidy_utilized[0].amount
+		if subsidy_utilized[0].amount or bill_without_subsidy[0].amount:
+			total_bill = subsidy_utilized[0].amount + bill_without_subsidy[0].amount
+		return consumption,subsidy_balance,total_bill
+	else:
+		consumption = 0
+		return consumption,subsidy_balance,total_bill

@@ -1,0 +1,76 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Data",
+   "label": "Employee ID",
+   "width": 100
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "width": 150
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Data",
+   "label": "Item",
+   "options": "",
+   "width": 150
+  },
+  {
+   "fieldname": "count",
+   "fieldtype": "Data",
+   "label": "Count",
+   "width": 80
+  },
+  {
+   "fieldname": "Amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "width": 100
+  }
+ ],
+ "creation": "2021-03-26 12:55:45.642050",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 1,
+   "options": "",
+   "wildcard_filter": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-03-30 12:57:43.040065",
+ "modified_by": "Administrator",
+ "module": "CMS",
+ "name": "Canteen Exception Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select `tabDaily Food Entry`.employee,`tabDaily Food Entry`.employee_name,`tabDaily Food Entry`.item,count(*),(`tabFood Item`.original_rate * count(*))\nfrom\n`tabDaily Food Entry`\nLeft Join `tabFood Item` on `tabDaily Food Entry`.item = `tabFood Item`.name\nwhere\ndate between %(from_date)s and %(to_date)s\nand subsidy = 0\ngroup by item,employee",
+ "ref_doctype": "Daily Food Entry",
+ "report_name": "Canteen Exception Report",
+ "report_script": "",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

@@ -11,7 +11,10 @@
   "original_rate",
   "subsidy_rate",
   "limit",
-  "item_image"
+  "column_break_5",
+  "item_image",
+  "from_time",
+  "to_time"
  ],
  "fields": [
   {
@@ -52,12 +55,28 @@
    "fieldname": "item_image",
    "fieldtype": "Attach Image",
    "label": "Item Image"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "00:00",
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time"
+  },
+  {
+   "default": "23:59",
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time"
   }
  ],
  "image_field": "item_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-17 15:37:40.881184",
+ "modified": "2021-03-26 12:37:56.608089",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Food Item",
@@ -76,7 +95,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1
