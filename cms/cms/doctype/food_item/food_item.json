@@ -7,6 +7,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "status",
+  "type",
   "item",
   "original_rate",
   "subsidy_rate",
@@ -71,12 +73,25 @@
    "fieldname": "to_time",
    "fieldtype": "Time",
    "label": "To Time"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nNot Active"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nBreakfast\nLunch\nDinner\nSnacks"
   }
  ],
  "image_field": "item_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-26 12:37:56.608089",
+ "modified": "2021-04-21 11:32:13.979894",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Food Item",
