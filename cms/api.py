@@ -39,6 +39,7 @@ def make_food_entry(payload):
             dfe.price = frappe.db.get_value("Food Item",item["item"],["original_rate"])
             dfe.save(ignore_permissions=True)
             frappe.db.commit()
+            return 'OK'
         else:
             dfe = frappe.new_doc("Daily Food Entry")
             dfe.employee = item["employee"]
@@ -49,3 +50,4 @@ def make_food_entry(payload):
             dfe.price = frappe.db.get_value("Food Item",item["item"],["subsidy_rate"])
             dfe.save(ignore_permissions=True)
             frappe.db.commit()
+            return 'OK'
