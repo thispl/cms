@@ -8,7 +8,9 @@
  "engine": "InnoDB",
  "field_order": [
   "status",
+  "column_break_2",
   "type",
+  "section_break_4",
   "item",
   "original_rate",
   "subsidy_rate",
@@ -16,7 +18,17 @@
   "column_break_5",
   "item_image",
   "from_time",
-  "to_time"
+  "to_time",
+  "section_break_13",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "column_break_18",
+  "friday",
+  "saturday",
+  "sunday",
+  "selected_days"
  ],
  "fields": [
   {
@@ -79,19 +91,83 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nActive\nNot Active"
+   "options": "\nActive\nInactive"
   },
   {
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": "\nBreakfast\nLunch\nDinner\nSnacks"
+   "options": "\nBreakfast\nLunch\nDinner\nSnacks\nSupper"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "Applicable days"
+  },
+  {
+   "default": "0",
+   "fieldname": "monday",
+   "fieldtype": "Check",
+   "label": "Monday"
+  },
+  {
+   "default": "0",
+   "fieldname": "tuesday",
+   "fieldtype": "Check",
+   "label": "Tuesday"
+  },
+  {
+   "default": "0",
+   "fieldname": "wednesday",
+   "fieldtype": "Check",
+   "label": "Wednesday"
+  },
+  {
+   "default": "0",
+   "fieldname": "thursday",
+   "fieldtype": "Check",
+   "label": "Thursday"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "friday",
+   "fieldtype": "Check",
+   "label": "Friday"
+  },
+  {
+   "default": "0",
+   "fieldname": "saturday",
+   "fieldtype": "Check",
+   "label": "Saturday"
+  },
+  {
+   "default": "0",
+   "fieldname": "sunday",
+   "fieldtype": "Check",
+   "label": "Sunday"
+  },
+  {
+   "fieldname": "selected_days",
+   "fieldtype": "Small Text",
+   "label": "Applicable days"
   }
  ],
  "image_field": "item_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-04-21 11:32:13.979894",
+ "modified": "2021-05-01 14:14:15.418660",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Food Item",
