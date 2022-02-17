@@ -1,63 +1,58 @@
 {
  "actions": [],
- "autoname": "FO-.###",
- "creation": "2021-03-20 14:31:51.985634",
+ "autoname": "FCA-.###",
+ "creation": "2021-05-05 16:06:20.180622",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "employee",
-  "employee_name",
+  "from_date",
+  "to_date",
   "column_break_3",
-  "date",
+  "plant",
   "section_break_5",
-  "items"
+  "consumption"
  ],
  "fields": [
   {
-   "fieldname": "employee",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Employee Code",
-   "options": "Employee",
-   "read_only": 1
-  },
-  {
-   "fieldname": "date",
+   "fieldname": "from_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Date",
-   "read_only": 1
+   "label": "From Date"
   },
   {
-   "fetch_from": "employee.employee_name",
-   "fieldname": "employee_name",
-   "fieldtype": "Data",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Employee Name",
-   "read_only": 1
+   "label": "To Date"
+  },
+  {
+   "fieldname": "consumption",
+   "fieldtype": "Small Text",
+   "label": "Consumption"
   },
   {
    "fieldname": "column_break_3",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_5",
-   "fieldtype": "Section Break"
+   "default": "All",
+   "fieldname": "plant",
+   "fieldtype": "Select",
+   "label": "Plant",
+   "options": "All\nLAB & PO\nHCD"
   },
   {
-   "fieldname": "items",
-   "fieldtype": "Table",
-   "label": "Items",
-   "options": "Food Order Item"
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-10-02 18:51:11.465279",
+ "modified": "2021-12-17 19:55:16.953238",
  "modified_by": "Administrator",
  "module": "CMS",
- "name": "Food Order No",
+ "name": "Food Consumption Annexure",
  "owner": "Administrator",
  "permissions": [
   {
@@ -73,7 +68,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1

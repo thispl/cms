@@ -31,6 +31,7 @@ frappe.ui.form.on('Daily Food Consumption', {
 					date:frm.doc.date
 				},
 				callback(r){
+					// console.log(r.message)
 					frm.clear_table("consumption")
 					frm.set_value("subsidy_balance",r.message[1])
 					frm.set_value("bill_amount",r.message[2])
@@ -38,7 +39,8 @@ frappe.ui.form.on('Daily Food Consumption', {
 						frm.add_child("consumption",{
 							"food_item": v.item,
 							"qty": v.qty,
-							"amount": v.amount
+							"amount": v.amount,
+							"date": frm.doc.date
 						})
 					})
 					frm.refresh_field("consumption")

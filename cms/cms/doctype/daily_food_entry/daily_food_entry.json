@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "autoname": "DFE-.####",
  "creation": "2021-03-16 12:01:55.419908",
  "doctype": "DocType",
@@ -8,9 +9,11 @@
  "field_order": [
   "employee",
   "employee_name",
+  "plant",
   "subsidy",
   "column_break_3",
   "food_order_no",
+  "cms_log",
   "date",
   "time",
   "section_break_5",
@@ -25,8 +28,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Employee",
-   "options": "Employee",
-   "read_only": 1
+   "options": "Employee"
   },
   {
    "fetch_from": "employee.employee_name",
@@ -44,8 +46,7 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Date",
-   "read_only": 1
+   "label": "Date"
   },
   {
    "fieldname": "time",
@@ -63,9 +64,9 @@
    "fieldname": "item",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Item Name",
    "options": "Food Item",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -90,13 +91,25 @@
    "default": "0",
    "fieldname": "subsidy",
    "fieldtype": "Check",
-   "label": "Subsidy",
-   "read_only": 1
+   "label": "Subsidy"
+  },
+  {
+   "fetch_from": "employee.plant",
+   "fieldname": "plant",
+   "fieldtype": "Link",
+   "label": "Plant",
+   "options": "Plant"
+  },
+  {
+   "fieldname": "cms_log",
+   "fieldtype": "Link",
+   "label": "CMS Log",
+   "options": "CMS Log"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-26 15:38:57.217027",
+ "modified": "2021-10-23 15:07:59.443877",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Daily Food Entry",

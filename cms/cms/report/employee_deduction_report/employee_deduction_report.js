@@ -1,4 +1,4 @@
-frappe.query_reports["Canteen Contractor Payment Report"] = {
+frappe.query_reports["Employee Deduction Report"] = {
 	"filters": [
 		{
 			"fieldname":"from_date",
@@ -13,14 +13,6 @@ frappe.query_reports["Canteen Contractor Payment Report"] = {
 			"fieldtype": "Date",
 			"reqd": 1,
 			"default": frappe.datetime.month_end()
-		},
-		{
-			"fieldname":"plant",
-			"label": __("Plant"),
-			"fieldtype": "Select",
-			"reqd": 1,
-			"options": "\nAll\nLAB & PO\nHCD",
-			"default": "LAB & PO"
 		}
     ]
 }
