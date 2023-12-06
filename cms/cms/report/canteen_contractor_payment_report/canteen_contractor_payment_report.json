@@ -1,30 +1,30 @@
 {
- "add_total_row": 0,
+ "add_total_row": 1,
  "columns": [
   {
-   "fieldname": "item",
+   "fieldname": "description",
    "fieldtype": "Data",
-   "label": "Item",
+   "label": "Description",
    "options": "",
-   "width": 100
+   "width": 200
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date",
-   "width": 100
-  },
-  {
-   "fieldname": "count",
-   "fieldtype": "Data",
-   "label": "Count",
-   "width": 80
-  },
-  {
-   "fieldname": "Amount",
+   "fieldname": "rate",
    "fieldtype": "Currency",
-   "label": "Amount",
-   "width": 100
+   "label": "Rate/Qty",
+   "width": 200
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity",
+   "width": 200
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Cntr. Value",
+   "width": 200
   }
  ],
  "creation": "2021-03-27 21:44:59.998337",
@@ -32,36 +32,20 @@
  "disabled": 0,
  "docstatus": 0,
  "doctype": "Report",
- "filters": [
-  {
-   "fieldname": "from_date",
-   "fieldtype": "Date",
-   "label": "From Date",
-   "mandatory": 1,
-   "options": "",
-   "wildcard_filter": 1
-  },
-  {
-   "fieldname": "to_date",
-   "fieldtype": "Date",
-   "label": "To Date",
-   "mandatory": 1,
-   "wildcard_filter": 0
-  }
- ],
+ "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2021-03-27 21:44:59.998337",
+ "modified": "2021-05-05 14:59:46.358965",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Canteen Contractor Payment Report",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "select `tabDaily Food Entry`.item,`tabDaily Food Entry`.date,count(*),(`tabFood Item`.original_rate * count(*))\nfrom\n`tabDaily Food Entry`\nLeft Join `tabFood Item` on `tabDaily Food Entry`.item = `tabFood Item`.name\nwhere\ndate between %(from_date)s and %(to_date)s\ngroup by item",
+ "query": "select `tabDaily Food Entry`.item,`tabFood Item`.original_rate,count(*),(`tabFood Item`.original_rate * count(*))\nfrom\n`tabDaily Food Entry`\nLeft Join `tabFood Item` on `tabDaily Food Entry`.item = `tabFood Item`.name\nwhere\ndate between %(from_date)s and %(to_date)s\ngroup by item",
  "ref_doctype": "Daily Food Entry",
  "report_name": "Canteen Contractor Payment Report",
  "report_script": "",
- "report_type": "Query Report",
+ "report_type": "Script Report",
  "roles": [
   {
    "role": "System Manager"

@@ -92,23 +92,31 @@ app_license = "MIT"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
+# 	"CMS Log": {
+# 		"after_insert": "cms.utils.create_dfe_from_cms_log",
+# 		# "on_cancel": "method",
+# 		# "on_trash": "method"
+# 	}
 # }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"cms.tasks.all"
 # 	],
-# 	"daily": [
-# 		"cms.tasks.daily"
-# 	],
+	"cron": {
+		"0 1 * * *": [
+           "cms.utils.clean_cms_log",
+        ],
+		"0 2 * * *": [
+		   "cms.utils.create_dfe_from_cms_log_bulk",
+        ],
+		"0 3 * * *": [
+		   "cms.utils.send_fca_test_email",
+        ]
+	}
 # 	"hourly": [
 # 		"cms.tasks.hourly"
 # 	],
@@ -118,7 +126,7 @@ app_license = "MIT"
 # 	"monthly": [
 # 		"cms.tasks.monthly"
 # 	]
-# }
+}
 
 # Testing
 # -------
@@ -144,3 +152,9 @@ app_license = "MIT"
 # auto_cancel_exempted_doctypes = ["Auto Repeat"]
 
 fixtures = ["Desk Page"]
+
+jenv = {
+	"methods": [
+		"get_consumption_data:cms.cms.doctype.food_consumption_annexure.food_consumption_annexure.get_consumption_data"
+	]
+}

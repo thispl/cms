@@ -14,32 +14,20 @@
    "width": 150
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date",
-   "width": 100
+   "fieldname": "plant",
+   "fieldtype": "Link",
+   "label": "Plant",
+   "options": "Plant",
+   "width": 0
   },
   {
-   "fieldname": "item",
-   "fieldtype": "Data",
-   "label": "Item",
-   "options": "",
-   "width": 150
-  },
-  {
-   "fieldname": "count",
-   "fieldtype": "Data",
-   "label": "Count",
-   "width": 80
-  },
-  {
-   "fieldname": "Amount",
+   "fieldname": "amount",
    "fieldtype": "Currency",
    "label": "Amount",
-   "width": 100
+   "width": 120
   }
  ],
- "creation": "2021-03-26 12:55:45.642050",
+ "creation": "2021-06-28 19:46:23.503875",
  "disable_prepared_report": 0,
  "disabled": 0,
  "docstatus": 0,
@@ -63,20 +51,23 @@
  ],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2021-06-28 20:05:24.839246",
+ "modified": "2021-11-26 15:49:43.111368",
  "modified_by": "Administrator",
  "module": "CMS",
- "name": "Canteen Exception Report",
+ "name": "Employee Deduction Report",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "select `tabDaily Food Entry`.employee,`tabDaily Food Entry`.employee_name,`tabDaily Food Entry`.date,`tabDaily Food Entry`.item,count(*),(`tabFood Item`.original_rate * count(*))\nfrom\n`tabDaily Food Entry`\nLeft Join `tabFood Item` on `tabDaily Food Entry`.item = `tabFood Item`.name\nwhere\ndate between %(from_date)s and %(to_date)s\nand subsidy = 0\ngroup by item,employee,date",
+ "query": "select `tabDaily Food Entry`.employee,`tabDaily Food Entry`.employee_name,`tabDaily Food Entry`.plant,sum(`tabDaily Food Entry`.price)\nfrom\n`tabDaily Food Entry`\nwhere\ndate between %(from_date)s and %(to_date)s\ngroup by employee",
  "ref_doctype": "Daily Food Entry",
- "report_name": "Canteen Exception Report",
+ "report_name": "Employee Deduction Report",
  "report_script": "",
  "report_type": "Query Report",
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "HR User"
   }
  ]
 }

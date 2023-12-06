@@ -1,7 +1,7 @@
 // Copyright (c) 2021, Teampro and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Food Consumption', {
+frappe.ui.form.on('Monthly Food Consumption', {
 	refresh: function(frm) {
 		frm.disable_save();
 		frm.fields_dict['consumption'].grid.wrapper.find('.grid-add-row').hide();
@@ -55,7 +55,7 @@ frappe.ui.form.on('Food Consumption', {
 		if(frm.doc.employee){
 			if(frm.doc.month){
 			frappe.call({
-				method:"cms.cms.doctype.food_consumption.food_consumption.get_food_consumption",
+				method:"cms.cms.doctype.monthly_food_consumption.monthly_food_consumption.get_monthly_food_consumption",
 				args:{
 					employee:frm.doc.employee,
 					month:frm.doc.month

@@ -59,7 +59,7 @@
    "fieldname": "consumption",
    "fieldtype": "Table",
    "label": "Consumption List",
-   "options": "Consumption"
+   "options": "Monthly Consumption"
   },
   {
    "fieldname": "month",
@@ -84,10 +84,10 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2021-03-22 17:39:22.461311",
+ "modified": "2021-10-20 18:27:51.371050",
  "modified_by": "Administrator",
  "module": "CMS",
- "name": "Food Consumption",
+ "name": "Monthly Food Consumption",
  "owner": "Administrator",
  "permissions": [
   {
