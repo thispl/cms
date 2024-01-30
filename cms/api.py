@@ -40,7 +40,7 @@ def run_method():
 @frappe.whitelist(allow_guest=True)
 def make_food_entry(payloads):
     payloads = json.loads(payloads)
-    frappe.log_error(message=payloads,title="payloads")
+    # frappe.log_error(message=payloads,title="payloads")
     for payload in payloads:
         payload = json.loads(payload)
         if payload:
@@ -209,13 +209,13 @@ def enqueue_cms_log(payloads,deviceid):
     
 def make_cms_log(payloads,deviceid):
     payloads = json.loads(payloads)
-    frappe.log_error(message=[payloads,deviceid,frappe.utils.now_datetime()],title="payloads")
+    # frappe.log_error(message=[payloads,deviceid,frappe.utils.now_datetime()],title="payloads")
     cmslog = frappe.new_doc('CMS Log')
     cmslog.time = frappe.utils.now_datetime()
     cmslog.device = cstr(deviceid)
     cmslog.log = cstr(payloads)
     cmslog.save(ignore_permissions=True)
-    frappe.log_error(message=cmslog,title="payloads_test")
+    # frappe.log_error(message=cmslog,title="payloads_test")
     frappe.db.commit()
     return 'OK'
 

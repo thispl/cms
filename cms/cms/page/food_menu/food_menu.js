@@ -20,7 +20,7 @@ class FoodMenu {
 		this.page = wrapper.page;
 		this.sidebar = this.wrapper.find('.layout-side-section');
 		this.main_section = this.wrapper.find('.layout-main-section');
-	// page.main.html(frappe.render_template("food_menu", {}));
+	// page.main.html(frappe.("food_menu", {}));
 
 	}
 	show_side_bar(){
